@@ -3,11 +3,11 @@ package AppBase.Proto.Response;
 import AppBase.Proto.Command;
 
 public class AddResponse extends Response {
-    private AddResponse() {
+    public AddResponse() {
         super(Command.ADD);
     }
 
-    private AddResponse(Command command) {
+    public AddResponse(Command command) {
         super(command);
 
         System.out.println("Create AddResponse");
