@@ -1,6 +1,6 @@
-package AppBase.Proto.Response;
+package AppBase.Message.Response;
 
-import AppBase.Proto.Command;
+import AppBase.Message.Command;
 
 public class AddResponse extends Response {
     public AddResponse() {

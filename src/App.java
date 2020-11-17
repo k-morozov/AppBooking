@@ -3,8 +3,8 @@ import java.util.logging.*;
 
 import AppBase.Parser;
 import AppBase.Worker;
-import AppBase.Proto.Request.Request;
-import AppBase.Proto.Response.Response;
+import AppBase.Message.Request.Request;
+import AppBase.Message.Response.Response;
 
 public class App {
     private static final Logger LOGGER = Logger.getLogger(App.class.getName());
@@ -37,6 +37,8 @@ public class App {
                     System.out.println("Failed parse");
                 }
             }
+
+            worker.print_db();
         } 
         catch (Exception ex){
             LOGGER.log(Level.WARNING, "Exception " + ex);

@@ -1,4 +1,4 @@
-package AppBase.Proto;
+package AppBase.Message;
 
 public enum Command {
     ADD,

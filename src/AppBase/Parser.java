@@ -1,8 +1,8 @@
 package AppBase;
 
-import AppBase.Proto.Request.Request;
-import AppBase.Proto.Request.AddRequest;
-import AppBase.Proto.Response.Response;
+import AppBase.Message.Request.Request;
+import AppBase.Message.Request.AddRequest;
+import AppBase.Message.Response.Response;
 
 public class Parser {
 
@@ -19,7 +19,9 @@ public class Parser {
             switch (params[0]) {
                 case "add":
                     System.out.println("command add");
-                    req = AddRequest.create();
+                    req = AddRequest.create()
+                            .set_date(Integer.parseInt(params[1]))
+                            .set_doing(params[2]);
                     break;
                 default:
                     System.out.println("Unknown command");

@@ -1,7 +1,7 @@
-package AppBase.Proto.Response;
+package AppBase.Message.Response;
 
-import AppBase.Proto.Message;
-import AppBase.Proto.Command;
+import AppBase.Message.Message;
+import AppBase.Message.Command;
 
 public abstract class Response implements Message {
     protected final Command m_command;

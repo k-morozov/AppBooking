@@ -1,7 +1,7 @@
-package AppBase.Proto.Request;
+package AppBase.Message.Request;
 
-import AppBase.Proto.Message;
-import AppBase.Proto.Command;
+import AppBase.Message.Message;
+import AppBase.Message.Command;
 
 public abstract class Request implements Message {
     protected final Command m_command;
