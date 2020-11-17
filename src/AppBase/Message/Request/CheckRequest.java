@@ -2,24 +2,24 @@ package AppBase.Message.Request;
 
 import AppBase.Message.Command;
 
-public final class AddRequest extends Request {
+public final class CheckRequest extends Request {
     private final int date;
     private final String doing;
 
-    public AddRequest() {
-        super(Command.ADD);
+    public CheckRequest() {
+        super(Command.CHECK);
         date = 0;
         doing = "none";
     }
 
-    public AddRequest(int date, String doing) {
-        super(Command.ADD);
+    public CheckRequest(int date, String doing) {
+        super(Command.CHECK);
         this.date = date;
         this.doing = doing;
     }
 
-    public static AddRequest create(int date, String doing) {
-        return new AddRequest(date, doing);
+    public static CheckRequest create(int date, String doing) {
+        return new CheckRequest(date, doing);
     }
 
     public int get_date() {

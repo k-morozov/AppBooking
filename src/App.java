@@ -31,8 +31,9 @@ public class App {
                 Request request = m_parser.parse_request(command);
                 if (request != null) {
                     Response response = worker.do_request(request);
-                    String answer = m_parser.parse_response(response);
-                    System.out.println(answer);
+                    /*String answer =*/ 
+                    m_parser.parse_response(response);
+                    // System.out.println(answer);
                 } else {
                     System.out.println("Failed parse");
                 }
