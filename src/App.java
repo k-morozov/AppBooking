@@ -5,6 +5,8 @@ import AppBase.Parser;
 import AppBase.Worker;
 import AppBase.Message.Request.Request;
 import AppBase.Message.Response.Response;
+import java.util.ArrayList;
+
 
 public class App {
     private static final Logger LOGGER = Logger.getLogger(App.class.getName());
@@ -28,11 +30,11 @@ public class App {
                 String command = sc.nextLine();
                 LOGGER.log(Level.INFO, "read command: {0}", command);
 
-                Request request = m_parser.parse_request(command);
-                if (request != null) {
-                    Response response = worker.do_request(request);
+                ArrayList<Request> requests = m_parser.parse_request(command);
+                if (!requests.isEmpty()) {
+                    ArrayList<Response> responses = worker.do_request(requests);
                     /*String answer =*/ 
-                    m_parser.parse_response(response);
+                    m_parser.parse_response(responses);
                     // System.out.println(answer);
                 } else {
                     System.out.println("Failed parse");
