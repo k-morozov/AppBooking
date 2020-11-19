@@ -2,9 +2,12 @@ package AppBase;
 
 import AppBase.Message.Request.Request;
 import AppBase.Message.Request.AddRequest;
+import AppBase.Message.Request.DelRequest;
 import AppBase.Message.Request.CheckRequest;
-import AppBase.Message.Response.CheckResponse;
 import AppBase.Message.Response.Response;
+import AppBase.Message.Response.CheckResponse;
+import AppBase.Message.Response.DelResponse;
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -47,6 +50,19 @@ public class Parser {
                     }
                     break;
                 }
+
+                case "del": {
+                    System.out.println("command del");
+
+                    Integer date;
+                    if (itParams.hasNext()) {
+                        date = Integer.parseInt(itParams.next());
+                        while (itParams.hasNext()) {
+                            requests.add(DelRequest.create(date, itParams.next()));
+                        }
+                    }
+                    break;
+                }
                 default:
                     System.out.println("Unknown command");
                     break;
@@ -70,9 +86,19 @@ public class Parser {
                 case CHECK: {
                     CheckResponse res = (CheckResponse)response;
                     if (res.get_status()) {
-                        System.out.println("YES");
+                        System.out.println("Check: YES");
                     } else {
-                        System.out.println("NO");
+                        System.out.println("Check: NO");
+                    }
+                    break;
+                }
+
+                case DEL: {
+                    DelResponse res = (DelResponse)response;
+                    if (res.get_status()) {
+                        System.out.println("Del: YES");
+                    } else {
+                        System.out.println("Del: NO");
                     }
                     break;
                 }
