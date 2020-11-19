@@ -1,7 +1,7 @@
-package ClientBrain.Message.Response;
+package com.appbooking.ClientBrain.Message.Response;
 
-import ClientBrain.Message.Command;
-import ClientBrain.Message.Message;
+import com.appbooking.ClientBrain.Message.Command;
+import com.appbooking.ClientBrain.Message.Message;
 
 public abstract class Response implements Message {
     protected final Command m_command;

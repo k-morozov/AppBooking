@@ -1,6 +1,6 @@
-package ClientBrain.Message.Request;
+package com.appbooking.ClientBrain.Message.Request;
 
-import ClientBrain.Message.Command;
+import com.appbooking.ClientBrain.Message.Command;
 
 public final class CheckRequest extends Request {
     private final int date;

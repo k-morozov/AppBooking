@@ -1,17 +1,16 @@
-package ClientBrain;
-
-import java.util.Iterator;
-
-import ClientBrain.Message.Request.AddRequest;
-import ClientBrain.Message.Request.CheckRequest;
-import ClientBrain.Message.Request.DelRequest;
-import ClientBrain.Message.Request.Request;
-import ClientBrain.Message.Response.CheckResponse;
-import ClientBrain.Message.Response.DelResponse;
-import ClientBrain.Message.Response.Response;
+package com.appbooking.ClientBrain;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
+
+import com.appbooking.ClientBrain.Message.Request.AddRequest;
+import com.appbooking.ClientBrain.Message.Request.CheckRequest;
+import com.appbooking.ClientBrain.Message.Request.DelRequest;
+import com.appbooking.ClientBrain.Message.Request.Request;
+import com.appbooking.ClientBrain.Message.Response.CheckResponse;
+import com.appbooking.ClientBrain.Message.Response.DelResponse;
+import com.appbooking.ClientBrain.Message.Response.Response;
 
 public class Parser {
 
