@@ -1,10 +1,11 @@
 import java.util.Scanner;
 import java.util.logging.*;
 
-import AppBase.Parser;
-import AppBase.Worker;
-import AppBase.Message.Request.Request;
-import AppBase.Message.Response.Response;
+import ClientBrain.Parser;
+import ClientBrain.Worker;
+import ClientBrain.Message.Request.Request;
+import ClientBrain.Message.Response.Response;
+
 import java.util.ArrayList;
 
 

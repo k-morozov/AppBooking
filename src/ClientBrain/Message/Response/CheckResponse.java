@@ -1,6 +1,6 @@
-package AppBase.Message.Response;
+package ClientBrain.Message.Response;
 
-import AppBase.Message.Command;
+import ClientBrain.Message.Command;
 
 public class CheckResponse extends Response {
     private final boolean status;

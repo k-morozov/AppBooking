@@ -1,7 +1,7 @@
-package AppBase.Message.Request;
+package ClientBrain.Message.Request;
 
-import AppBase.Message.Message;
-import AppBase.Message.Command;
+import ClientBrain.Message.Command;
+import ClientBrain.Message.Message;
 
 public abstract class Request implements Message {
     protected final Command m_command;

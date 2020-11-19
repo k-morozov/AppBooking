@@ -1,18 +1,18 @@
-package AppBase;
+package ClientBrain;
 
 import java.util.Map;
 import java.util.Map.Entry;
+
+import ClientBrain.Message.Request.AddRequest;
+import ClientBrain.Message.Request.CheckRequest;
+import ClientBrain.Message.Request.DelRequest;
+import ClientBrain.Message.Request.Request;
+import ClientBrain.Message.Response.AddResponse;
+import ClientBrain.Message.Response.CheckResponse;
+import ClientBrain.Message.Response.DelResponse;
+import ClientBrain.Message.Response.Response;
+
 import java.util.HashMap;
-
-import AppBase.Message.Request.Request;
-import AppBase.Message.Request.AddRequest;
-import AppBase.Message.Request.CheckRequest;
-import AppBase.Message.Request.DelRequest;
-import AppBase.Message.Response.Response;
-import AppBase.Message.Response.AddResponse;
-import AppBase.Message.Response.CheckResponse;
-import AppBase.Message.Response.DelResponse;
-
 import java.util.ArrayList;
 
 public class Worker {

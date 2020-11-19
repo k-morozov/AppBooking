@@ -1,4 +1,4 @@
-package AppBase.Message;
+package ClientBrain.Message;
 
 public enum Command {
     ADD,

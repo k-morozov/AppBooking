@@ -1,6 +1,6 @@
-package AppBase.Message.Request;
+package ClientBrain.Message.Request;
 
-import AppBase.Message.Command;
+import ClientBrain.Message.Command;
 
 public final class AddRequest extends Request {
     private final int date;
