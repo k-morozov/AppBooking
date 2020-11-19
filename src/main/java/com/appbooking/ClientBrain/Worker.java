@@ -13,7 +13,7 @@ import com.appbooking.ClientBrain.Message.Response.AddResponse;
 import com.appbooking.ClientBrain.Message.Response.CheckResponse;
 import com.appbooking.ClientBrain.Message.Response.DelResponse;
 import com.appbooking.ClientBrain.Message.Response.Response;
-import com.appbooking.ClientBrain.Message.Command;
+import com.appbooking.ClientBrain.Message.*;
 
 public class Worker {
     private Map<Integer, ArrayList<String>> db;
