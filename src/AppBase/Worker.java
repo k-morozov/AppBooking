@@ -7,9 +7,12 @@ import java.util.HashMap;
 import AppBase.Message.Request.Request;
 import AppBase.Message.Request.AddRequest;
 import AppBase.Message.Request.CheckRequest;
+import AppBase.Message.Request.DelRequest;
 import AppBase.Message.Response.Response;
 import AppBase.Message.Response.AddResponse;
 import AppBase.Message.Response.CheckResponse;
+import AppBase.Message.Response.DelResponse;
+
 import java.util.ArrayList;
 
 public class Worker {
@@ -43,6 +46,8 @@ public class Worker {
                     // System.out.println("read CheckRequest");
                     responses.add(do_CheckRequest((CheckRequest)request));
                     break;
+                case DEL:
+                    responses.add(do_DelRequest((DelRequest)request));
                 default:
                     break;
             }
@@ -67,7 +72,6 @@ public class Worker {
     private Response do_CheckRequest(CheckRequest request) {
         // System.out.println("working with CheckRequest");
         // System.out.println("working with CheckRequest: " + request.get_date() + " " + request.get_doing());
-        Response response;
         boolean result = false;
         if (db.containsKey(request.get_date())) {
             ArrayList<String> value = db.get(request.get_date());
@@ -75,7 +79,16 @@ public class Worker {
                 result = true;
             }
         }
-        response = CheckResponse.create(result);
-        return response;
-    } 
+        return CheckResponse.create(result);
+    }
+    
+    private Response do_DelRequest(DelRequest request) {
+        boolean result = false;
+        if (db.containsKey(request.get_date())) {
+            ArrayList<String> values = db.get(request.get_date());
+            result = values.remove(request.get_doing());
+        }
+        
+        return DelResponse.create(result);
+    }
 }
