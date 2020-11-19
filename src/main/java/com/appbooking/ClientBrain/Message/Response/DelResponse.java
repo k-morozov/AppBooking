@@ -1,6 +1,6 @@
-package ClientBrain.Message.Response;
+package com.appbooking.ClientBrain.Message.Response;
 
-import ClientBrain.Message.Command;
+import com.appbooking.ClientBrain.Message.Command;
 
 public class DelResponse extends Response {
     private final boolean status;

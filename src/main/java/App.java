@@ -1,12 +1,17 @@
+import java.util.*;
 import java.util.Scanner;
-import java.util.logging.*;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.FileHandler;
+import java.util.logging.Formatter;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
-import ClientBrain.Parser;
-import ClientBrain.Worker;
-import ClientBrain.Message.Request.Request;
-import ClientBrain.Message.Response.Response;
-
-import java.util.ArrayList;
+import com.appbooking.ClientBrain.Parser;
+import com.appbooking.ClientBrain.Worker;
+import com.appbooking.ClientBrain.Message.Request.Request;
+import com.appbooking.ClientBrain.Message.Response.Response;
 
 
 public class App {

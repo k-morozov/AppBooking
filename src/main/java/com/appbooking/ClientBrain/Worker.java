@@ -1,19 +1,19 @@
-package ClientBrain;
+package com.appbooking.ClientBrain;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import ClientBrain.Message.Request.AddRequest;
-import ClientBrain.Message.Request.CheckRequest;
-import ClientBrain.Message.Request.DelRequest;
-import ClientBrain.Message.Request.Request;
-import ClientBrain.Message.Response.AddResponse;
-import ClientBrain.Message.Response.CheckResponse;
-import ClientBrain.Message.Response.DelResponse;
-import ClientBrain.Message.Response.Response;
-
-import java.util.HashMap;
-import java.util.ArrayList;
+import com.appbooking.ClientBrain.Message.Request.AddRequest;
+import com.appbooking.ClientBrain.Message.Request.CheckRequest;
+import com.appbooking.ClientBrain.Message.Request.DelRequest;
+import com.appbooking.ClientBrain.Message.Request.Request;
+import com.appbooking.ClientBrain.Message.Response.AddResponse;
+import com.appbooking.ClientBrain.Message.Response.CheckResponse;
+import com.appbooking.ClientBrain.Message.Response.DelResponse;
+import com.appbooking.ClientBrain.Message.Response.Response;
+import com.appbooking.ClientBrain.Message.Command;
 
 public class Worker {
     private Map<Integer, ArrayList<String>> db;
@@ -58,7 +58,7 @@ public class Worker {
     private Response do_AddRequest(AddRequest request) {
         // System.out.println("working with AddRequest");
         if (!db.containsKey(request.get_date())) {            
-            db.put(request.get_date(), new ArrayList<>());
+            db.put(request.get_date(), new ArrayList<String>());
         }
         ArrayList<String> values = db.get(request.get_date());
         values.add(request.get_doing());
