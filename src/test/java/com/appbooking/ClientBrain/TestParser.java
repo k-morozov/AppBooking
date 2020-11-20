@@ -4,7 +4,6 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import java.util.*;
-import com.appbooking.ClientBrain.*;
 import com.appbooking.ClientBrain.Message.Request.*;
 import com.appbooking.ClientBrain.Message.*;
 

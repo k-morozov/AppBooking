@@ -13,7 +13,6 @@ import com.appbooking.ClientBrain.Message.Response.AddResponse;
 import com.appbooking.ClientBrain.Message.Response.CheckResponse;
 import com.appbooking.ClientBrain.Message.Response.DelResponse;
 import com.appbooking.ClientBrain.Message.Response.Response;
-import com.appbooking.ClientBrain.Message.*;
 
 public class Worker {
     private Map<Integer, ArrayList<String>> db;
@@ -35,19 +34,17 @@ public class Worker {
     public ArrayList<Response> do_request(ArrayList<Request> requests) {
         ArrayList<Response> responses = new ArrayList<>();
         for(Request request : requests) {
-            // System.out.println("Worker do: " + request.get_command().name());
 
             switch (request.get_command()) {
                 case ADD:
-                    // System.out.println("read AddRequest");
-                    responses.add(do_AddRequest((AddRequest)request));
+                    responses.add(do_AddRequest(request));
                     break;
                 case CHECK:
                     // System.out.println("read CheckRequest");
-                    responses.add(do_CheckRequest((CheckRequest)request));
+                    responses.add(do_CheckRequest(request));
                     break;
                 case DEL:
-                    responses.add(do_DelRequest((DelRequest)request));
+                    responses.add(do_DelRequest(request));
                 default:
                     break;
             }
@@ -55,38 +52,43 @@ public class Worker {
         return responses;
     }
 
-    private Response do_AddRequest(AddRequest request) {
-        // System.out.println("working with AddRequest");
-        if (!db.containsKey(request.get_date())) {            
-            db.put(request.get_date(), new ArrayList<String>());
-        }
-        ArrayList<String> values = db.get(request.get_date());
-        values.add(request.get_doing());
-
+    private Response do_AddRequest(Request request) {
         Response response;
+        if (request instanceof AddRequest) {
+            AddRequest add_request = (AddRequest)request;
+            if (!db.containsKey(add_request.get_date())) {            
+                db.put(add_request.get_date(), new ArrayList<String>());
+            }
+            ArrayList<String> values = db.get(add_request.get_date());
+            values.add(add_request.get_doing());
+        }
+                
         response = AddResponse.create();
-
         return response;
     }
     
-    private Response do_CheckRequest(CheckRequest request) {
-        // System.out.println("working with CheckRequest");
-        // System.out.println("working with CheckRequest: " + request.get_date() + " " + request.get_doing());
+    private Response do_CheckRequest(Request request) {
         boolean result = false;
-        if (db.containsKey(request.get_date())) {
-            ArrayList<String> value = db.get(request.get_date());
-            if (value.contains(request.get_doing())) {
-                result = true;
+        if (request instanceof CheckRequest) {
+            CheckRequest check_request = (CheckRequest)request;
+            if (db.containsKey(check_request.get_date())) {
+                ArrayList<String> value = db.get(check_request.get_date());
+                if (value.contains(check_request.get_doing())) {
+                    result = true;
+                }
             }
         }
         return CheckResponse.create(result);
     }
     
-    private Response do_DelRequest(DelRequest request) {
+    private Response do_DelRequest(Request request) {
         boolean result = false;
-        if (db.containsKey(request.get_date())) {
-            ArrayList<String> values = db.get(request.get_date());
-            result = values.remove(request.get_doing());
+        if (request instanceof DelRequest) {
+            DelRequest del_request = (DelRequest)request;
+            if (db.containsKey(del_request.get_date())) {
+                ArrayList<String> values = db.get(del_request.get_date());
+                result = values.remove(del_request.get_doing());
+            }
         }
         
         return DelResponse.create(result);
