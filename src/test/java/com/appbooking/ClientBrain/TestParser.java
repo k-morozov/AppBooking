@@ -23,6 +23,7 @@ public class TestParser {
         assertTrue( !requests.isEmpty() );
         assertTrue( requests.size() == 1 );
         assertTrue( requests.get(0).get_command() == Command.ADD );
+        assertTrue( requests.get(0) instanceof AddRequest) ;
         AddRequest request = (AddRequest)requests.get(0);
         assertTrue( request.get_date() == 1 );
         assertTrue( request.get_doing().equals("go") );
@@ -34,7 +35,9 @@ public class TestParser {
         ArrayList<Request> requests = parser.parse_request("add 1 go read");
         assertTrue( !requests.isEmpty() );
         assertTrue( requests.size() == 2 );
+        assertTrue( requests.get(0) instanceof AddRequest) ;
         assertTrue( requests.get(0).get_command() == Command.ADD );
+        assertTrue( requests.get(1) instanceof AddRequest) ;
         assertTrue( requests.get(1).get_command() == Command.ADD );
     }
 }
