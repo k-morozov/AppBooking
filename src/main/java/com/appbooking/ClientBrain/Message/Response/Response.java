@@ -4,13 +4,14 @@ import com.appbooking.ClientBrain.Message.Command;
 import com.appbooking.ClientBrain.Message.Message;
 
 public abstract class Response implements Message {
-    protected final Command m_command;
+    protected final Command command;
 
     public Response(Command a_command) {
-        m_command = a_command;
+        this.command = a_command;
     }
 
+    @Override
     public final Command get_command() {
-        return m_command;
+        return command;
     }
 }

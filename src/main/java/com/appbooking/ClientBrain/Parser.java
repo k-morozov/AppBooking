@@ -27,8 +27,6 @@ public class Parser {
 
             switch (itParams.next()) {
                 case "add": {
-                    System.out.println("command add");
-
                     Integer date;
                     if (itParams.hasNext()) {
                         date = Integer.parseInt(itParams.next());
@@ -39,8 +37,6 @@ public class Parser {
                     break;
                 }
                 case "check": {
-                    System.out.println("command check");
-
                     Integer date;
                     if (itParams.hasNext()) {
                         date = Integer.parseInt(itParams.next());
@@ -52,8 +48,6 @@ public class Parser {
                 }
 
                 case "del": {
-                    System.out.println("command del");
-
                     Integer date;
                     if (itParams.hasNext()) {
                         date = Integer.parseInt(itParams.next());

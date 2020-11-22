@@ -1,5 +1,9 @@
 package com.appbooking.ClientBrain.Message;
 
 public interface Message {
-    public abstract Command get_command();
+    // Command comand = Command.UNKNOWN;
+    
+    default Command get_command() {
+        return Command.UNKNOWN;
+    }
 }

@@ -32,12 +32,23 @@ public class TestParser {
     @Test
     public void RequestTwo() {
         Parser parser = new Parser();
+        AddRequest request;
+
         ArrayList<Request> requests = parser.parse_request("add 1 go read");
         assertTrue( !requests.isEmpty() );
         assertTrue( requests.size() == 2 );
         assertTrue( requests.get(0) instanceof AddRequest) ;
-        assertTrue( requests.get(0).get_command() == Command.ADD );
+        
+        request = (AddRequest)requests.get(0);
+        assertTrue( request.get_command() == Command.ADD );
+        assertTrue( request.get_date() == 1 );
+        assertTrue( request.get_doing().equals("go") );
+
         assertTrue( requests.get(1) instanceof AddRequest) ;
-        assertTrue( requests.get(1).get_command() == Command.ADD );
+        request = (AddRequest)requests.get(1);
+        assertTrue( request.get_command() == Command.ADD );
+        assertTrue( request.get_date() == 1 );
+        assertTrue( request.get_doing().equals("read") );
+
     }
 }
