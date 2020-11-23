@@ -4,13 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 
-import com.appbooking.ClientBrain.Message.Request.AddRequest;
-import com.appbooking.ClientBrain.Message.Request.CheckRequest;
-import com.appbooking.ClientBrain.Message.Request.DelRequest;
-import com.appbooking.ClientBrain.Message.Request.Request;
-import com.appbooking.ClientBrain.Message.Response.CheckResponse;
-import com.appbooking.ClientBrain.Message.Response.DelResponse;
-import com.appbooking.ClientBrain.Message.Response.Response;
+import com.appbooking.ClientBrain.Message.Request.*;
+import com.appbooking.ClientBrain.Message.Response.*;
 
 public class Parser {
 

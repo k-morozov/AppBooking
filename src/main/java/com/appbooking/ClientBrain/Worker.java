@@ -5,14 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import com.appbooking.ClientBrain.Message.Request.AddRequest;
-import com.appbooking.ClientBrain.Message.Request.CheckRequest;
-import com.appbooking.ClientBrain.Message.Request.DelRequest;
-import com.appbooking.ClientBrain.Message.Request.Request;
-import com.appbooking.ClientBrain.Message.Response.AddResponse;
-import com.appbooking.ClientBrain.Message.Response.CheckResponse;
-import com.appbooking.ClientBrain.Message.Response.DelResponse;
-import com.appbooking.ClientBrain.Message.Response.Response;
+import com.appbooking.ClientBrain.Message.Request.*;
+import com.appbooking.ClientBrain.Message.Response.*;
 
 public class Worker {
     private Map<Integer, ArrayList<String>> db;
